@@ -1,0 +1,37 @@
+{% extends "rewards/base.html" %}
+{% block title %}Tasks List{% endblock %}
+{% block content %}
+<h2>Your Tasks</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>App Name</th>
+            <th>Screenshot</th>
+            <th>Points Earned</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.app_name }}</td>
+            <td>
+                {% if task.screenshot %}
+                    <img src="{{ task.screenshot }}" alt="Screenshot" width="100">
+                {% else %}
+                    No Screenshot
+                {% endif %}
+            </td>
+            <td>{{ task.points_earned }}</td>
+            <td>
+                {% if task.is_completed %}
+                    <span class="badge bg-success">Completed</span>
+                {% else %}
+                    <span class="badge bg-warning">Pending</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

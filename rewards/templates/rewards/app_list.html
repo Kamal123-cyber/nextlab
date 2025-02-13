@@ -1,0 +1,21 @@
+{% extends "rewards/base.html" %}
+{% block title %}Apps List{% endblock %}
+{% block content %}
+<h2>Available Apps</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for app in apps %}
+        <tr>
+            <td>{{ app.name }}</td>
+            <td>{{ app.points }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

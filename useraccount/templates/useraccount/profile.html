@@ -1,0 +1,9 @@
+{% extends "rewards/base.html" %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <h2>Profile</h2>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+</div>
+{% endblock %}
