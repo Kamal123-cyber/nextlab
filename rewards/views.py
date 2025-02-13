@@ -3,7 +3,7 @@ from django.shortcuts import redirect, render
 from django.views.generic import ListView, FormView, TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-API_BASE_URL = "http://127.0.0.1:8006/api/rewards"
+API_BASE_URL = "https://ktechs.in/api/rewards"
 
 
 class HomeView(TemplateView):

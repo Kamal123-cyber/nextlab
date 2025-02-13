@@ -6,7 +6,7 @@ from django.urls import reverse
 
   # Ensures the name exists
 
-API_BASE_URL = "http://127.0.0.1:8006/api"
+API_BASE_URL = "https://ktechs.in/api"
 
 class RegisterView(TemplateView):
     template_name = "useraccount/register.html"
