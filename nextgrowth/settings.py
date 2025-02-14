@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'useraccount',
     'rewards',
-    'corsheaders'
+    'corsheaders',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [

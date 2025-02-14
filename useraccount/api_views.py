@@ -10,6 +10,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+#Below api is for Register
 class RegisterAPIView(APIView):
     permission_classes = [AllowAny]
 
@@ -20,14 +21,17 @@ class RegisterAPIView(APIView):
             return Response({"message": "User registered successfully"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+#Below api is for Login
 class LoginAPIView(APIView):
-    # permission_classes = [AllowAny]
+    permission_classes = [AllowAny]
 
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
         if serializer.is_valid():
             return Response(serializer.validated_data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+#Below api is for viewing UserProfile
 
 class UserProfileAPIView(APIView):
     authentication_classes = [JWTAuthentication]
